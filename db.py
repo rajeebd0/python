@@ -3,11 +3,11 @@ import MySQLdb
 class DBC(object):
 
     _instance = None
-    def __new__(cls, *args, **kwargs):
-        if not cls._instance:
-            cls._instance = super(DBC, cls).__new__(
-                                cls, *args, **kwargs)
-        return cls._instance
+    def __new__(self, *args, **kwargs):
+        if not self._instance:
+            self._instance = super(DBC, self).__new__(
+                                self, *args, **kwargs)
+        return self._instance
 
     def connect(self, dsn):
         try:
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     a.connect(dsn)
     # a.read_data('users')
     # data = {'name':'fffff','username':'gooll@app.com','password':'123456'}
-    where = {'id':'1'}
+    where = {'id':'15'}
     # a.insert_data('users', data)
     # a.update_data('users', data, where)
     a.delete_data('users', where)
